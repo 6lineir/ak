@@ -9,7 +9,7 @@ JOBS =
 
 =======
 ## Install In Sample to PC
-install Python 3.8
-pip install -r requirments.txt
-./manage.py runserver
-User/Pass = admin
+### install Python 3.8
+### pip install -r requirments.txt
+### ./manage.py runserver
+### User/Pass = admin
