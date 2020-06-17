@@ -38,6 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 # My Applications
+    'widget_tweaks',
+    'crispy_forms',
+
     'web.apps.WebConfig',
     'accounts.apps.AccountsConfig',
 ]
@@ -118,6 +121,11 @@ USE_TZ = True
 
 # USer Models Acc
 AUTH_USER_MODEL = 'accounts.User'
+
+LOGIN_REDIRECT_URL = '/accounts/profile'
+LOGOUT_REDIRECT_URL = '/accounts/login/'
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
