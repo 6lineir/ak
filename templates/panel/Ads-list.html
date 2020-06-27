@@ -35,14 +35,14 @@
         </div>
         <!-- /.card-header -->
         <div class="card-body">
-          <table id="example1" class="table table-bordered table-striped">
+          <table class="table table-bordered table-striped table-hover">
             <thead>
             <tr>
               <th>عنوان آگهی</th>
               <th>قیمت</th>
               <th>Platform(s)</th>
-              <th>Engine version</th>
-              <th>CSS grade</th>
+              <th>وضعیت آگهی</th>
+              <th>تاریخ ثبت</th>
             </tr>
             </thead>
             {% for addAds in ads_list %}
@@ -51,8 +51,20 @@
               <td>{{ addAds.title }}</td>
               <td>{{ addAds.price }}</td>
               <td>Win 95+</td>
-              <td> 4</td>
-              <td>X</td>
+              <td>{% if addAds.status == 'p' %}
+                <span class="badge badge-success">منتشرشده</span>
+                {% else %}
+                {% if addAds.status == 'f' %}
+                <span class="badge badge-secondary">پیش نویس</span>
+                {% else %}
+                {% if addAds.status == 'v' %}
+                <span class="badge badge-warning">آگهی ویژه</span>
+                {% else %}
+                {% if addAds.status == 'd' %}
+                <span class="badge badge-danger">در انتظار تایید</span>
+                {% endif %}{% endif %}{% endif %}{% endif %}
+              </td>
+              <td>{{ addAds.publish }}</td>
             </tr>
           </tbody>
           {% endfor %}

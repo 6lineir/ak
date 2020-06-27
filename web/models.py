@@ -1,6 +1,7 @@
 from django.db import models
 from accounts.models import User
 from django.utils import timezone
+from extensions.utils import jalali_converter
 # Create your models here.
 
 class City(models.Model):
@@ -42,9 +43,16 @@ class addAds(models.Model):
     price = models.BigIntegerField(verbose_name='قیمت')
     Adspic = models.ImageField(upload_to='upload/ads_pic', verbose_name='تصویر آگهی')
     status = models.CharField(max_length=1, choices=STATUS_CHOICES, verbose_name="وضعیت")
-    timepub = models.DateTimeField(default=timezone.now, verbose_name='زمان انتشار')
+    publish = models.DateTimeField(default=timezone.now, verbose_name='زمان انتشار')
     def __str__(self):
         return self.title
     class Meta:
 	    verbose_name = "آگهی"
 	    verbose_name_plural = "آگهی ها"
+
+    def jpublish(self):
+	    return jalali_converter(self.publish)
+    jpublish.short_description = "زمان انتشار"
+
+#class
+

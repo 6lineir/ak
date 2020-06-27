@@ -1,0 +1,11 @@
+*.log
+*.mo
+.env
+__pycache__/
+.git
+venv/
+db.sqlite3
+*.pyc
+venv
+local_settings.py
+*.pot
