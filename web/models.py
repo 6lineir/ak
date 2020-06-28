@@ -37,6 +37,7 @@ class addAds(models.Model):
 	)
     author = models.ForeignKey(User, null=True, on_delete=models.SET_NULL, related_name='articles', verbose_name="نویسنده")
     title = models.CharField(max_length=52 , verbose_name='عنوان آگهی')
+    slug = models.SlugField(max_length=100, unique=True, verbose_name="آدرس مقاله")
     category = models.ManyToManyField(category, verbose_name='دسته بندی')
     city = models.ManyToManyField(City, verbose_name='استان')
     body = models.TextField(verbose_name='توضیحات آگهی')

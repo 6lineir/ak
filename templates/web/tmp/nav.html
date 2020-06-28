@@ -8,25 +8,25 @@
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'web:Home' %}">Home</a>
+            <a class="nav-link {% if request.resolver_match.url_name == 'Home' %} active {% endif %}" href="{% url 'web:Home' %}">خانه</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'web:about' %}">About</a>
+            <a class="nav-link {% if request.resolver_match.url_name == 'about' %} active {% endif %}" href="{% url 'web:about' %}">درباره ما</a>
         </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Services</a>
+            <a class="nav-link {% if request.resolver_match.url_name == 'ads' %} active {% endif %}" href="{% url 'web:ads' %}">لیست آگهی</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Contact</a>
+            <a class="nav-link {% if request.resolver_match.url_name == '#' %} active {% endif %}" href="#">تماس باما</a>
           </li>
         {% if user.is_authenticated %}
       
-        <a href="{% url 'accounts:panel' %}" class="btn btn-success">Profile</a>
-          <a href="{% url 'accounts:logout' %}" class="btn btn-danger">LogOut</a>
+        <a href="{% url 'accounts:panel' %}" class="btn btn-success">پروفایل</a>
+          <a href="{% url 'accounts:logout' %}" class="btn btn-danger">خروج</a>
                 
             {% else %}
             <li class="nav-item">
-              <a href="{% url 'accounts:login' %}" class="btn btn-primary">Login</a>
+              <a href="{% url 'accounts:login' %}" class="btn btn-primary">ورود</a>
             </li>
         {% endif %}
         </ul>

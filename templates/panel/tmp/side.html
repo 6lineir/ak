@@ -24,7 +24,7 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
           <li class="nav-item">
-            <a href="{% url 'accounts:panel' %}" class="nav-link active">
+            <a href="{% url 'accounts:panel' %}" class="nav-link {% if request.resolver_match.url_name == 'panel' %} active {% endif %}">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
                 داشبورد
@@ -33,7 +33,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="{% url 'accounts:ads_list' %}" class="nav-link">
+            <a href="{% url 'accounts:ads_list' %}" class="nav-link {% if request.resolver_match.url_name == 'ads_list' %} active {% endif %}">
               <i class="nav-icon fas fa-th"></i>
               <p>
                 لیست آگهی ها
@@ -42,10 +42,10 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="{% url 'accounts:add_ads' %}" class="nav-link {% if request.resolver_match.url_name == 'add_ads' %} active {% endif %}">
               <i class="nav-icon fas fa-copy"></i>
               <p>
-                اضافه کردن آگهی
+                ثبت آگهی جدید
                 <i class="fas fa-angle-left right"></i>
                 <span class="badge badge-info right">0</span>
               </p>
@@ -54,7 +54,7 @@
 
 
           <li class="nav-item">
-            <a href="{% url 'accounts:profile' %}" class="nav-link">
+            <a href="{% url 'accounts:profile' %}" class="nav-link {% if request.resolver_match.url_name == 'profile' %} active {% endif %}">
               <i class="nav-icon fas fa-user"></i>
               <p>
                 حساب کاربری

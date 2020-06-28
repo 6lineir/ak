@@ -13,6 +13,11 @@ def index(request):
 def profile(request):
     return render(request, 'panel/profile.html')
 
+@login_required
+def Add_Ads(request):
+    return render(request, 'panel/add-ads.html')
+
+
 def Ads_list(request):
     ads_list = addAds.objects.all()
     context = {

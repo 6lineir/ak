@@ -11,7 +11,7 @@
         {% for addAds in adslist %}
           <div class="col-lg-3 col-md-6 mb-4">
             <div class="card h-100">
-              <img class="card-img-top" src="{{ addAds.Adspic.url }}" alt="ads">
+              <img class="card-img-top" src="{{ addAds.Adspic.url }}" alt="{{ addAds.title }}">
               <div class="card-body">
                 <h4 class="card-title">{{ addAds.title }}</h4>
                 <p class="card-text">{{ addAds.body }}</p>

@@ -1,0 +1,103 @@
+{% extends 'panel/base.html' %}
+ {% block content %}
+
+<div class="wrapper">
+
+  <!-- Navbar -->
+  {% include './tmp/nav.html' %}
+  <!-- /.navbar -->
+ <!-- SideBar -->
+ {% include './tmp/side.html' %}
+ <!-- /.SideBar -->
+  
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1>ثبت آگهی</h1>
+          </div>
+        </div>
+      </div><!-- /.container-fluid -->
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+
+      <!-- Default box -->
+
+
+      <div class="card card-primary">
+        <div class="card-header">
+          <h3 class="card-title">General</h3>
+
+          <div class="card-tools">
+            <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
+              <i class="fas fa-minus"></i></button>
+          </div>
+        </div>
+        <div class="card-body" style="display: block;">
+          <div class="form-group">
+            <label for="inputName">عنوان آگهی</label>
+            <input type="text" id="inputName" class="form-control">
+          </div>
+          <div class="form-group">
+            <label for="inputDescription">توضیحات</label>
+            <textarea id="inputDescription" class="form-control" rows="4"></textarea>
+          </div>
+          <div class="form-group">
+            <label for="inputStatus">دسته بندی</label>
+            <select id="inputStatus" class="form-control custom-select">
+              <option selected="" disabled="">Select one</option>
+              <option>اجاره</option>
+              <option>فروش</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="inputClientCompany">Client Company</label>
+            <input type="text" id="inputClientCompany" class="form-control">
+          </div>
+          <div class="form-group">
+            <label for="inputProjectLeader">Project Leader</label>
+            <input type="text" id="inputProjectLeader" class="form-control">
+          </div>
+
+          <div class="row">
+            <div class="col-12">
+              <a href="#" class="btn btn-secondary">انصراف</a>
+              <input type="submit" value="ثبت آگهی" class="btn btn-success float-right">
+            </div>
+          </div>
+    
+
+        </div>
+        
+        <!-- /.card-body -->
+      </div>
+
+
+
+
+
+      
+      <!-- /.card -->
+
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+
+  {% include './tmp/footer.html' %}
+
+  <!-- Control Sidebar -->
+  <aside class="control-sidebar control-sidebar-dark">
+    <!-- Control sidebar content goes here -->
+  </aside>
+  <!-- /.control-sidebar -->
+</div>
+<!-- ./wrapper -->
+
+{% endblock %}
