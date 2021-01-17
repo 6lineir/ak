@@ -1,6 +1,6 @@
 <<<<<<< HEAD
 # ak
-web applications Amlak-kara . AMLAK-KARA.COM
+web applications
 
 JOBS = 
 # Login Token
